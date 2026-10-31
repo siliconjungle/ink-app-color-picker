@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Color Picker</title><link rel="icon" href="icon.svg" type="image/svg+xml"><link rel="stylesheet" href="styles/font.css"><link rel="stylesheet" href="styles/tokens.css"><link rel="stylesheet" href="app.css"></head>
+<body>
+<header><button id="pick" disabled><img src="icon.svg" alt=""><span id="pick-label">Pick anywhere</span><kbd id="shortcut">P</kbd></button><label class="adjust" title="Adjust colour"><input type="color" id="native" value="#b9c2cd" aria-label="Adjust colour" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 17h16M9 4v6M15 14v6"/></svg></label></header>
+<main>
+  <p id="support">Choose a pixel from any visible Ink OS app.</p>
+  <div id="preview" role="img" aria-label="Current colour #B9C2CD"><span id="preview-hex">#B9C2CD</span></div>
+  <form id="hex-form"><label for="hex">HEX</label><input id="hex" value="#B9C2CD" spellcheck="false" autocomplete="off" maxlength="7" aria-label="HEX colour"><button type="submit" id="apply" title="Apply HEX colour">Apply</button><button type="button" data-copy="hex" aria-label="Copy HEX">Copy</button></form>
+  <div class="value-row"><span>RGB</span><output id="rgb">185, 194, 205</output><button data-copy="rgb" aria-label="Copy RGB">Copy</button></div>
+  <div class="value-row"><span>HSL</span><output id="hsl">213°, 17%, 76%</output><button data-copy="hsl" aria-label="Copy HSL">Copy</button></div>
+  <div class="save-row"><span id="storage">Connecting…</span><button id="save" disabled>Save swatch</button></div>
+  <section aria-label="Saved colours"><div class="section-label">Saved</div><div id="saved" class="swatches"></div><p id="saved-empty" class="empty">Keep colours you want to use again.</p></section>
+  <section aria-label="Recent colours"><div class="section-label">Recent</div><div id="recent" class="swatches"></div><p id="recent-empty" class="empty">Picked colours will appear here.</p></section>
+</main>
+<footer><span id="status" role="status" aria-live="polite">Ready</span><span id="method">sRGB</span></footer>
+<script type="module" src="app.mjs"></script>
+</body></html>

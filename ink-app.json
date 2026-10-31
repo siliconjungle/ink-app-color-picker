@@ -1,0 +1,49 @@
+{
+  "slug": "color-picker",
+  "title": "Color Picker",
+  "repository": "https://github.com/siliconjungle/ink-app-color-picker",
+  "directory": "web",
+  "entry": "index.html",
+  "desktop": {
+    "entry": "color-picker",
+    "icon": {
+      "svg": "web/icon.svg"
+    },
+    "window": {
+      "width": 360,
+      "height": 580
+    }
+  },
+  "capabilities": [
+    "world.read",
+    "world.write"
+  ],
+  "commands": [
+    {
+      "id": "pick",
+      "title": "Pick a colour…",
+      "description": "Open the picker. Use Pick anywhere to select a screen pixel.",
+      "inputs": [],
+      "handler": {
+        "type": "open"
+      }
+    },
+    {
+      "id": "inspect",
+      "title": "Inspect a HEX colour",
+      "description": "Inspect and convert a HEX colour.",
+      "inputs": [
+        {
+          "name": "hex",
+          "label": "HEX colour",
+          "type": "text",
+          "required": true
+        }
+      ],
+      "handler": {
+        "type": "open"
+      }
+    }
+  ],
+  "commandsClient": "commands.mjs"
+}
